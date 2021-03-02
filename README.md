@@ -1,5 +1,5 @@
 # DSC Project 2021
-!!! Welcome to Project !!
+!! Welcome to Project !!
 ## How to Use
 ###### Installation
 - Download and install XAMPP.
