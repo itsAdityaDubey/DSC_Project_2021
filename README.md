@@ -12,5 +12,6 @@
 - Now you can run Apache to see it working.
 ###### Setup Database
 - Upload DSC_1_0_0.sql file to mtsql for reference see Screenshoot below.
+
   ![Screenshot 2021-03-05 014927](https://user-images.githubusercontent.com/76168019/110025448-64193d80-7d55-11eb-8006-c2f6e537185f.png)
 
