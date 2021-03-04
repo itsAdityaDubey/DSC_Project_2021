@@ -35,7 +35,7 @@ if(!isset($_SESSION['Login_ID'])){
 
       <div class="collapse navbar-collapse" id="navbar4">
         <ul class="navbar-nav mr-auto pl-lg-4">
-          <li class="nav-item px-lg-2 active"> <a class="nav-link" href="#"> <span
+          <li class="nav-item px-lg-2 active"> <a class="nav-link" href="dashboard.php"> <span
                 class="d-inline-block d-lg-none icon-width"><i class="fas fa-home"></i></span>Dashboard</a> </li>
           <li class="nav-item px-lg-2"> <a class="nav-link" href="about.php"><span
                 class="d-inline-block d-lg-none icon-width"><i class="fas fa-spa"></i></span>About</a> </li>
@@ -48,7 +48,7 @@ if(!isset($_SESSION['Login_ID'])){
         <li class="nav-item px-lg-2 dropdown d-menu">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false"><span class="d-inline-block d-lg-none icon-width"><i
-                  class="far fa-caret-square-down"></i></span><i class="fas fa-user-circle"></i> 
+                  class="far fa-caret-square-down"></i></span><i class="fas fa-user-circle"></i>
                   <?php
                     $conn = mysqli_connect("localhost", "root", "", "dsc");
                     if (!$conn) {
@@ -90,55 +90,8 @@ if(!isset($_SESSION['Login_ID'])){
     <div class="container py-5">
       <div class="row py-5">
         <div class="mx-auto col-lg-10">
-          <h4 class="display-6 mb-4 ">Welcome to Dashboard</h4>
-          <table class="table table-striped">
-            <thead style="background-color: #0030ff;">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Card Number</th>
-                <th scope="col">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>784359764542</td>
-                <td>
-                  <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-sucess">Delay</button>
-                    <button type="button" class="btn btn-info">Accept</button>
-                    <button type="button" class="btn btn-danger">Cancel</button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>415278528695</td>
-                <td>
-                  <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-sucess">Delay</button>
-                    <button type="button" class="btn btn-info">Accept</button>
-                    <button type="button" class="btn btn-danger">Cancel</button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>624835781015</td>
-                <td>
-                  <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-sucess">Delay</button>
-                    <button type="button" class="btn btn-info">Accept</button>
-                    <button type="button" class="btn btn-danger">Cancel</button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <h4 class="display-6 mb-4 ">Feedback</h4>
+          
         </div>
       </div>
     </div>

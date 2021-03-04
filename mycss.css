@@ -6,3 +6,11 @@
 }
 /* Font Awesome Icons have variable width. Added fixed width to fix that.*/
 .icon-width { width: 2rem;}
+.alert {
+  position: absolute;
+  top: 50;
+  left: 0;
+  z-index:999;
+  display: none;
+  overflow:hidden;
+}

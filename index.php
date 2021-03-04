@@ -1,3 +1,16 @@
+<?php
+ session_start();
+ 
+if(isset($_SESSION['Login_code'])){
+     if($_SESSION['Login_code'] == 1){
+        header("Location: dashboard.php");
+     }elseif($_SESSION['Login_code'] == 0){
+      echo 'Details Incorrect!!';
+   }elseif($_SESSION['Login_code'] == 2){
+    echo 'Please Login !!';
+ };  
+ }
+?>
 <!doctype html>
 <html lang="en">
 
@@ -58,14 +71,14 @@
     <div>
       <div class="bg-white rounded mx-auto d-block" style="max-width: 25%; min-width: 320px;">
         <div class="pl-3 pr-3 pt-3">
-          <form class="form-signin" method="POST" action="dashboard.php">
+          <form class="form-signin" method="POST" action="login.php">
             <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
             <div class="form-group">
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              <input type="email" name="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Enter email">
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input type="password" name="Password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
             <!-- 2 column grid layout for inline styling -->
             <div class="row mb-4">
@@ -82,13 +95,12 @@
                 <a href="#!">Forgot password?</a>
               </div>
             </div>
-            <button type="submit"style="background-color: #0030ff;"
-              class="btn btn-primary btn-block">Log In</button>
+            <button type="submit"style="background-color: #0030ff;"class="btn btn-primary btn-block">Log In</button>
           </form>
         </div>
         <br>
         <div class="p-3 text-center" style="height: 57px; background-color: #e9ecef;">
-          <p> Click on Login to go to Dashboard</p>
+          <a href="regester.php"><p>Regester</p></a> 
         </div>
         <div style="height: 10px; background-color: #0030ff;">
 
