@@ -10,5 +10,7 @@
   ![Screenshot 2021-03-03 125834](https://user-images.githubusercontent.com/76168019/109769427-31215d80-7c20-11eb-8119-050c9829e91d.png)
   ![GitSS](https://user-images.githubusercontent.com/76168019/109769111-ca03a900-7c1f-11eb-8d43-5b67839bd3ed.png)
 - Now you can run Apache to see it working.
+> Setup Database.
+- Upload DSC_1_0_0.sql file to mtsql for reference see Screenshoot below.
+  ![Screenshot 2021-03-05 014927](https://user-images.githubusercontent.com/76168019/110025448-64193d80-7d55-11eb-8006-c2f6e537185f.png)
 
-> Currently there is no php yet its just frontend.
