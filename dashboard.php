@@ -2,6 +2,7 @@
  session_start();
  
 if(!isset($_SESSION['Login_ID'])){
+  $_SESSION['Login_code'] = 2;
   header("Location: index.php");
  }
 ?>

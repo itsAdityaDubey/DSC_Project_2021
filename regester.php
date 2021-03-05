@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<?php 
+  <?php 
 function uniqidReal($lenght) {
     // uniqid gives 13 chars, but you could adjust it to your needs.
     if (function_exists("random_bytes")) {
@@ -66,7 +66,7 @@ if($Check ==0 ){
 
 mysqli_free_result($result);
 }
-?>  
+?>
   <nav class="navbar navbar-expand-lg navbar-light shadow-sm bg-light fixed-top">
     <div class="container"> <a class="navbar-brand d-flex align-items-center" href="index.php">
         <span class="ml-3 font-weight-bold">DCS</apan>
@@ -112,50 +112,53 @@ mysqli_free_result($result);
           <form class="form-signin" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
             <h1 class="h3 mb-3 font-weight-normal">Regester</h1>
             <div class="form-group">
-              <input type="text" name="First_Name" class="form-control" placeholder="Enter First Name">
+              <input type="text" name="First_Name" class="form-control" placeholder="Enter First Name" required>
             </div>
             <div class="form-group">
-              <input type="text" name="Middle_Name" class="form-control" placeholder="Enter Middle Name">
+              <input type="text" name="Middle_Name" class="form-control" placeholder="Enter Middle Name" >
             </div>
             <div class="form-group">
-              <input type="text" name="Last_Name" class="form-control" placeholder="Enter Last Name">
+              <input type="text" name="Last_Name" class="form-control" placeholder="Enter Last Name" required>
             </div>
             <div class="form-group">
               <input type="email" name="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Enter email">
-            </div><div class="form-group">
-            <select name="Profession" class="form-control">
-            <option value="">Select Profession</option>
-            <option value="Doctor">Doctor</option>
-            <option value="Office">Office Work</option>
-            </select>
+                placeholder="Enter email" required>
             </div>
             <div class="form-group">
-              <input type="text" name="Post" class="form-control" placeholder="Enter Post">
+              <select name="Profession" class="form-control" required>
+                <option value="">Select Profession</option>
+                <option value="Doctor">Doctor</option>
+                <option value="Office">Office Work</option>
+              </select>
             </div>
-            <button type="submit"style="background-color: #0030ff;"class="btn btn-primary btn-block">Regester</button>
+            <div class="form-group">
+              <input type="text" name="Post" class="form-control" placeholder="Enter Post" required>
+            </div>
+            <button type="submit" style="background-color: #0030ff;" class="btn btn-primary btn-block">Regester</button>
           </form>
         </div>
         <br>
         <div class="p-3 text-center" style="height: 57px; background-color: #e9ecef;">
-          <a href="index.php"><p>Log In</p></a> 
+          <a href="index.php">
+            <p>Log In</p>
+          </a>
         </div>
         <div style="height: 10px; background-color: #0030ff;">
         </div>
       </div>
     </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="myjs.js"></script>
-    <script>
-       window.setTimeout(function(){
-        $('#centralModal').modal('toggle');
-       }, 500); 
-    </script>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="myjs.js"></script>
+  <script>
+    window.setTimeout(function () {
+      $('#centralModal').modal('toggle');
+    }, 500); 
+  </script>
 
 
-<?php 
+  <?php 
      if(!empty($_POST)){
         $ID = $Final_ID;
         $First_Name = ucfirst(strtolower($_POST['First_Name']));

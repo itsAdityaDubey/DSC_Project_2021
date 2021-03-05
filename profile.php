@@ -338,9 +338,8 @@ if(!isset($_SESSION['Login_ID'])){
           exit;
        }
       while ($row = mysqli_fetch_assoc($result)) {
-        if ($row['Password'] = $Password) {
+        if ($row['Password'] == $Password) {
             $change = 1;
-            
         }
          
       }
@@ -364,40 +363,27 @@ if(!isset($_SESSION['Login_ID'])){
         mysqli_close($conn);
         
         echo '<div class="modal fade" id="centralModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-            <strong>Update success</strong>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <small>Password Update success</small>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            </div>
-          </div>
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+           <strong>Password Updated successfully</strong>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
         </div>';
         }else{
-            echo '<div class="modal fade" id="centralModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          
+        echo '<div class="modal fade" id="centralModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-            <strong>Could Not Update</strong>
+            <strong>Old-Password was incorrect</strong>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
-              Old-Password was incorrect
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>';
+         </div>';
         }
      }else{
 
