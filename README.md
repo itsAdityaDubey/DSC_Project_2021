@@ -1,7 +1,8 @@
 # DSC Project 2021
  Welcome to Project
 
-![Screenshot 2021-03-03 011707](https://user-images.githubusercontent.com/76168019/109705841-3cdc3800-7bbe-11eb-9aa7-5b24386aa4f7.png)
+![Screenshot 2021-03-05 124457](https://user-images.githubusercontent.com/76168019/110080648-c0f61180-7db0-11eb-9e83-e1facc018d5b.png)
+
 ## How to Use
 ###### Installation
 - Download and install XAMPP.
