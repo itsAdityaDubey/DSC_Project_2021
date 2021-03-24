@@ -43,14 +43,14 @@ if(!isset($_SESSION['Login_ID'])){
           <li class="nav-item px-lg-2"> <a class="nav-link" href="feedback.php"><span
                 class="d-inline-block d-lg-none icon-width"><i class="far fa-user"></i></i></span>Feedback</a> </li>
 
-          
+
         </ul>
         <ul class="navbar-nav ml-auto mt-3 mt-lg-0">
-        <li class="nav-item px-lg-2 dropdown d-menu">
+          <li class="nav-item px-lg-2 dropdown d-menu">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false"><span class="d-inline-block d-lg-none icon-width"><i
-                  class="far fa-caret-square-down"></i></span><i class="fas fa-user-circle"></i> 
-                  <?php
+                  class="far fa-caret-square-down"></i></span><i class="fas fa-user-circle"></i>
+              <?php
                     $conn = mysqli_connect("localhost", "root", "", "dsc");
                     if (!$conn) {
                        echo "Unable to connect to DB: " . mysqli_error();
@@ -76,7 +76,7 @@ if(!isset($_SESSION['Login_ID'])){
             </a>
             <div class="dropdown-menu shadow-sm sm-menu" aria-labelledby="dropdown01">
               <a class="dropdown-item" href="profile.php">My Profile</a>
-              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Messages</a>
               <a class="dropdown-item" href="logout.php">Logout</a>
             </div>
           </li>
@@ -102,42 +102,75 @@ if(!isset($_SESSION['Login_ID'])){
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>784359764542</td>
-                <td>
-                  <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-sucess">Delay</button>
-                    <button type="button" class="btn btn-info">Accept</button>
-                    <button type="button" class="btn btn-danger">Cancel</button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>415278528695</td>
-                <td>
-                  <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-sucess">Delay</button>
-                    <button type="button" class="btn btn-info">Accept</button>
-                    <button type="button" class="btn btn-danger">Cancel</button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>624835781015</td>
-                <td>
-                  <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-sucess">Delay</button>
-                    <button type="button" class="btn btn-info">Accept</button>
-                    <button type="button" class="btn btn-danger">Cancel</button>
-                  </div>
-                </td>
-              </tr>
+              <?php
+     // Display List
+
+     $conn = mysqli_connect("localhost", "root", "", "dsc");
+
+     if (!$conn) {
+        echo "Unable to connect to DB: " . mysqli_error();
+        exit;
+     }
+
+    // Query
+    $sql = "SELECT Name,Card_No
+        FROM   list
+        ORDER BY Tab_ID DESC";    //the last entry will be at first spot
+
+    $result = mysqli_query($conn,$sql);
+
+    if (!$result) {
+       echo "Could not successfully run query ($sql) from DB: " . mysqli_error();
+       exit;
+    }
+
+    if (mysqli_num_rows($result) == 0) {
+       echo "No rows found, nothing to print so am exiting";
+       exit;
+    }
+
+    $i = 1;
+   while ($row = mysqli_fetch_assoc($result)) {
+       echo '<tr>
+       <th scope="row">'.$i.'</th>
+       <td>'.$row["Name"].'</td>
+       <td>'.$row["Card_No"].'</td>
+       <td>
+        <div class="btn-group d-none d-md-flex justify-content-center">
+          <a href="#" class="btn btn-warning" role="button">
+          Delay
+          </a>
+          <a href="#" class="btn btn-info" role="button">
+          Accept
+          </a>
+          <a href="#" class="btn btn-danger" role="button">
+          Cancel
+          </a>
+        </div>
+        <div class="dropdown  d-md-none">
+          <button class="btn btn-success dropdown-toggle" type="button"
+                  data-toggle="dropdown">
+            Choose 
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="#" class="dropdown-item " style="background-color: #ffc107;">
+            Delay
+            </a>
+            <a href="#" class="dropdown-item " style="background-color: #17a2b8;">
+            Accept
+            </a>
+            <a href="#" class="dropdown-item " style="background-color: #dc3545;">
+            Cancel
+            </a>  
+          </div>
+        </div>
+       </td>
+     </tr>';
+     $i++;
+   }
+
+    mysqli_free_result($result);
+?>
             </tbody>
           </table>
         </div>
@@ -147,6 +180,11 @@ if(!isset($_SESSION['Login_ID'])){
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Dropdowns -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
   <script src="myjs.js"></script>
 
 </body>

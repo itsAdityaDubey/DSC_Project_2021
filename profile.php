@@ -74,7 +74,7 @@ if(!isset($_SESSION['Login_ID'])){
             </a>
             <div class="dropdown-menu shadow-sm sm-menu" aria-labelledby="dropdown01">
               <a class="dropdown-item" href="profile.php">My Profile</a>
-              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Messages</a>
               <a class="dropdown-item" href="logout.php">Logout</a>
             </div>
           </li>

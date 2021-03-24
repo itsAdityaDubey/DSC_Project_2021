@@ -1,5 +1,11 @@
 <?php
  session_start();
+ if(isset($_SESSION['Login_code'])){
+  if($_SESSION['Login_code'] == 1){
+     header("Location: dashboard.php");
+     echo'go dashboard';
+  }
+ }
 ?>
 <!doctype html>
 <html lang="en">
@@ -31,7 +37,7 @@
         <ul class="navbar-nav mr-auto pl-lg-4">
           <li class="nav-item px-lg-2"> <a class="nav-link" href="#"><span
                 class="d-inline-block d-lg-none icon-width"><i class="fas fa-spa"></i></span>About</a> </li>
-          <li class="nav-item px-lg-2"> <a class="nav-link" href="#"><span
+          <li class="nav-item px-lg-2"> <a class="nav-link" href="feedback.php"><span
                 class="d-inline-block d-lg-none icon-width"><i class="far fa-user"></i></i></span>Feedback</a> </li>
         </ul>
         <ul class="navbar-nav ml-auto mt-3 mt-lg-0">
@@ -110,9 +116,7 @@
     </script>
     <?php
    if(isset($_SESSION['Login_code'])){
-        if($_SESSION['Login_code'] == 1){
-           header("Location: dashboard.php");
-        }elseif($_SESSION['Login_code'] == 0){
+      if($_SESSION['Login_code'] == 0){
          echo '<div class="modal fade" id="centralModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
          <div class="modal-content">
@@ -136,8 +140,8 @@
            </div>
         </div>';
         session_unset();
-    };  
     }
+  }
    ?>
 </body>
 
