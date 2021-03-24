@@ -1,7 +1,8 @@
 # DSC Project 2021
  Welcome to Project
 
-![Screenshot 2021-03-05 124457](https://user-images.githubusercontent.com/76168019/110080648-c0f61180-7db0-11eb-9e83-e1facc018d5b.png)
+![Screenshot 2021-03-25 003700](https://user-images.githubusercontent.com/76168019/112369612-62aeb580-8d02-11eb-93cd-e9ba2b2bb372.png)
+
 
 ## How to Use
 ###### Installation
