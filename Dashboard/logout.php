@@ -8,5 +8,5 @@ session_unset();
 session_destroy();
 
 //index
-header("Location: index.php");
+header("Location: ../index.php");
 ?>

@@ -36,7 +36,7 @@ if(!empty($_POST)){
 
    while ($row = mysqli_fetch_assoc($result)) {
        if($Password == $row['Password']){
-        header("Location: dashboard.php");
+        header("Location: ./Dashboard");
         $_SESSION['Login_ID'] = $row['ID'];
         $_SESSION['Login_code'] = 1;
        }else{
